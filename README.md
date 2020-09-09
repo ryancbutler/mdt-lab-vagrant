@@ -65,7 +65,7 @@ While the image builds we can adjust our virtual box network and create our temp
 
 ## Network
 
-DHCP must be disabled on the *192.168.56.0/24* network
+DHCP must be disabled on the *192.168.56.0/24* Virtual Box host-only network
 
 ![network1](images/network1.png)
 
@@ -107,3 +107,12 @@ vagrant up
 - **mylab\vagrant** can be used for authentication
   - Configured as Domain and Enterprise admin
 - Local **administrator** password is set to **P@ssw0rd**
+
+# Test MDT
+
+- Boot your test VM and
+- Cancel the intial boot disk screen (only shows once)
+- Press **F12** at the bios screen
+- Select *l* to boot from lan
+- PXE process should pickup from here
+- Happy labbing

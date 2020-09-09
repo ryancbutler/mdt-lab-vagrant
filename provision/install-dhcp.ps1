@@ -1,7 +1,8 @@
 Install-WindowsFeature DHCP -IncludeManagementTools
 netsh dhcp add securitygroups
 Restart-Service dhcpserver
-Add-DhcpServerInDC -DnsName "mdt01.mylab.com" -IPAddress "192.168.56.3"
+start-sleep -Seconds 3
+Add-DhcpServerInDC
 
 Set-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12" -Name ConfigurationState -Value 2
 
