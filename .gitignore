@@ -1,0 +1,8 @@
+.vagrant/
+*.box
+package/
+tmp/
+ldaprc
+*.iso
+**/packer_cache/*
+**/output-*
