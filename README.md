@@ -24,6 +24,7 @@ The following needs to be installed on the local PC:
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads)
 - [Packer](https://www.packer.io/downloads)
+- Clone this repo `git clone https://github.com/ryancbutler/afce-vagrant.git`
 
 **Note:** All these can be installed with *choco*
 
@@ -93,11 +94,10 @@ This VM will be used to actually test MDT with
 This will deploy the environment using the Packer image created earlier
 
 ```
-#Run as Admin
-
 #If still in Packer dir
 cd ..
 #From repo root
+#may need to run as admin
 vagrant up
 ```
 
