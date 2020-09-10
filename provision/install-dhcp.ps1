@@ -2,7 +2,9 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 netsh dhcp add securitygroups
 Restart-Service dhcpserver
 start-sleep -Seconds 3
-Add-DhcpServerInDC
+
+#Todo Doublehop scenerio which causes this to fail
+#Add-DhcpServerInDC
 
 Set-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12" -Name ConfigurationState -Value 2
 
