@@ -12,7 +12,7 @@ Uses Packer and Vagrant to create a local MDT lab leveraging [Automation Framewo
 
 ## Big thanks
 
-- [Trond Eirik Haavarstein](https://github.com/haavarstein) for dedicating a massive amount of time for making MDT super easy to get started with.  Check out the paid version of [Automation Framework](https://courses.euctraining.com/) for even more automation goodness.
+- [Trond Eirik Haavarstein](https://github.com/haavarstein) for dedicating a massive amount of time for making MDT super easy to get started with.  Check out the paid version of [Automation Framework](https://xenapptraining.com) for even more automation goodness.
   - https://github.com/haavarstein/Automation-Framework-Community-Edition/
 - [Rui Lopes](https://github.com/rgl/) for so many awesome Packer and Vagrant scripts used for this.
   - https://github.com/rgl/windows-vagrant
@@ -26,13 +26,16 @@ The following needs to be installed on the local PC:
 - [Packer](https://www.packer.io/downloads)
 - Clone this repo `git clone https://github.com/ryancbutler/afce-vagrant.git`
 
-**Note:** All these can be installed with *choco*
+**Note:** All these can be installed with *[choco](https://chocolatey.org/)*
 
 ```
+#Install choco if needed
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 choco install -y virtualbox packer vagrant packer-provisioner-windows-update
 ```
 
-Copy the 2019 ISO to root repo dir (eg "C:\afce-vagrant\"):
+Copy the 2019 ISO to root repo dir (eg "C:\mdt-lab-vagrant\"):
 - [Windows 2019 Eval ISO](https://www.microsoft.com/en-us/cloud-platform/windows-server-trial)
 
 ## Vagrant Plugins
