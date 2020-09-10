@@ -1,7 +1,10 @@
 # Purpose
 Uses Packer and Vagrant to create a local MDT lab leveraging [Automation Framework Community Edition](https://github.com/haavarstein/Automation-Framework-Community-Edition) running on Virtual Box.
 
+<img src="images/design.png" alt="design" width="426">
+
 ## Creates the following
+
 
 - 2019 Datacenter image created via Packer
 - 2019 Domain controller via Vagrant
