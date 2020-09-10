@@ -20,11 +20,12 @@ Uses Packer and Vagrant to create a local MDT lab leveraging [Automation Framewo
 
 # Pre-Reqs
 
-The following needs to be installed on the local PC:
-- [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/downloads)
-- [Packer](https://www.packer.io/downloads)
-- Clone this repo `git clone https://github.com/ryancbutler/afce-vagrant.git`
+The following needs to be done on the local PC:
+- Clone `git clone https://github.com/ryancbutler/mdt-lab-vagrant.git` or download `https://github.com/ryancbutler/mdt-lab-vagrant/archive/master.zip` this repo
+- Download and copy a [Windows 2019 Eval ISO](https://www.microsoft.com/en-us/cloud-platform/windows-server-trial) to repo dir (eg "C:\mdt-lab-vagrant\")
+- [Virtualbox](https://www.virtualbox.org/wiki/Downloads) installed
+- [Vagrant](https://www.vagrantup.com/downloads) installed
+- [Packer](https://www.packer.io/downloads) installed
 
 **Note:** All these can be installed with *[choco](https://chocolatey.org/)*
 
@@ -32,11 +33,8 @@ The following needs to be installed on the local PC:
 #Install choco if needed
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-choco install -y virtualbox packer vagrant packer-provisioner-windows-update
+choco install -y virtualbox packer vagrant
 ```
-
-Copy the 2019 ISO to root repo dir (eg "C:\mdt-lab-vagrant\"):
-- [Windows 2019 Eval ISO](https://www.microsoft.com/en-us/cloud-platform/windows-server-trial)
 
 ## Vagrant Plugins
 
@@ -69,7 +67,7 @@ While the image builds we can adjust our virtual box network and create our temp
 
 ## Network
 
-DHCP must be disabled on the *192.168.56.0/24* Virtual Box host-only network
+DHCP must be **disabled** on the *192.168.56.0/24* Virtual Box host-only network
 
 ![network1](images/network1.png)
 
@@ -119,3 +117,15 @@ vagrant up
 - Select *l* to boot from lan
 - PXE process should pickup from here
 - Happy labbing
+
+# Power environment down
+
+```
+vagrant halt
+```
+
+# Destroy Environment
+
+```
+vagrant destroy -f
+```
